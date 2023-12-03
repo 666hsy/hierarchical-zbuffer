@@ -4,6 +4,10 @@
 #include "./Model.cpp"
 #include "./OctTree.cpp"
 #include "./AABB.cpp"
+#include "./Zbuffer.cpp"
+#include "./OctreeZbuffer.cpp"
+#include "./Painter.cpp"
+
 using namespace std;
 int main(int argc,char* argv[])
 {
@@ -17,6 +21,11 @@ int main(int argc,char* argv[])
     if(module->loadModel(string(argv[1])))
     {
         OctTree* tree = new OctTree(module);    //将场景组织成八叉树
+        OctreeZbuffer* octreeZbuffer=new OctreeZbuffer(1024,1024,tree);
+
+        Painter* painter=new Painter();
+
+        painter->render(octreeZbuffer);
     }
     else
     {

@@ -22,7 +22,8 @@ OctTree::OctTree(Model* model)
     {
         insert(model->faces[i],root);   
     }
-    cout<<"共有"<<nodeNums<<"个结点"<<endl;
+    cout<<bound->x_min<<"  "<<bound->x_max<<"   "<<bound->y_min<<"   "<<bound->y_max<<"   "<<bound->z_min<<"   "<<bound->z_max<<endl;
+    cout<<"八叉树共有"<<nodeNums<<"个结点"<<endl;
 }
 
 bool OctTree::check(Face face,AABB bound)   //检查包围盒是否包围了该三角面

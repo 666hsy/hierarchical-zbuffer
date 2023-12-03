@@ -1,6 +1,7 @@
 #pragma once
 #include "./Model.h"
 #include "./AABB.h"
+using namespace std;
 
 struct OctTreeNode
 {
